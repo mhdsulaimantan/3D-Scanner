@@ -9,7 +9,7 @@
       :marker-labels="(val) => val.toString()"
       snap
       :min="1"
-      :max="4"
+      :max="64"
       :disable="scannerStatus !== Constants.SCANNER_STATUS.READY"
     />
   </div>

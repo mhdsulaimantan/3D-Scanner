@@ -22,14 +22,7 @@
       icon="stop"
       label="/ Unlock"
       size="30px"
-      :class="[
-        ,
-        {
-          'bg-blue-grey-2': isStopBtnDisabled(),
-        },
-      ]"
       @click="stopProcess()"
-      :disable="isStopBtnDisabled()"
     />
   </div>
 </template>
@@ -89,14 +82,6 @@ const getStartButtonStatus = () => {
 };
 
 const startButtonStatus = computed(() => getStartButtonStatus());
-
-// disable the stop button when the machine is in idle
-const isStopBtnDisabled = (): boolean => {
-  return (
-    scannerStatus.value === Constants.SCANNER_STATUS.READY ||
-    scannerStatus.value === Constants.SCANNER_STATUS.DISCONNECT
-  );
-};
 
 const stopProcess = () => {
   scannerManagerStore.stopScanning();
