@@ -75,7 +75,7 @@ export const useScannerManagerStore = defineStore('scanner', {
         );
         setTimeout(
           () => (this.scannerStatus = Constants.SCANNER_STATUS.RUN),
-          500
+          100
         );
       });
     },
